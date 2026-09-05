@@ -30,6 +30,6 @@ jobs:
     - name: build and push
       uses: docker/build-push-action@v6
       with:
-        tags: ghcr.io/${{ github.repository }}:${{ github.sha }}
+        tags: ghcr.io/jezielmoura/forgejo-runner:${{ github.sha }}
         context: .
         push: true
