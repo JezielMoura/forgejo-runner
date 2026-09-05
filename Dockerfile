@@ -1,6 +1,7 @@
 FROM node:24-slim
 
 ENV DEBIAN_FRONTEND=noninteractive \
+    NPM_CONFIG_PREFIX=/home/runner/.npm-global \
     DOTNET_ROOT=/usr/share/dotnet \
     DOTNET_NOLOGO=1 \
     DOTNET_CLI_TELEMETRY_OPTOUT=1 \
