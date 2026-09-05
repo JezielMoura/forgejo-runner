@@ -29,4 +29,4 @@ RUN chown -R runner:runner /home/runner
 
 USER runner
 
-CMD ["forgejo-runner", "daemon", "-c", "/home/runner/runner-config.yml"]
+CMD ["forgejo-runner", "daemon", "-c", "/etc/forgejo-runner/config.yaml"]
