@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     DOTNET_NOLOGO=1 \
     DOTNET_CLI_TELEMETRY_OPTOUT=1 \
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1 \
-    PATH="/usr/share/dotnet:/usr/share/dotnet/tools:/home/runner/.dotnet/tools:${PATH}"
+    PATH="/usr/share/dotnet:/usr/share/dotnet/tools:/home/runner/.dotnet/tools:/home/runner/.npm-global/bin:${PATH}"
 
 RUN apt-get update && apt-get install -y ca-certificates curl git buildah fuse-overlayfs libicu-dev jq gnupg
 
