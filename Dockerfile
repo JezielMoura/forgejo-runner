@@ -9,8 +9,6 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 RUN apt-get update && apt-get install -y ca-certificates curl git buildah fuse-overlayfs libicu-dev jq gnupg
 
-RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
-
 RUN curl -sSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh \
     && chmod +x /tmp/dotnet-install.sh \
     && /tmp/dotnet-install.sh --channel 10.0 --install-dir "${DOTNET_ROOT}" \
