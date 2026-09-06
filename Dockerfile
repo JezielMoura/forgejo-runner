@@ -24,6 +24,11 @@ RUN ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/') \
     && chmod u+s /usr/bin/newuidmap /usr/bin/newgidmap \
     && forgejo-runner -v
 
+RUN curl -fsSL -o /usr/local/bin/kubectl \
+      "https://dl.k8s.io/release/$(curl -Ls https://dl.k8s.io/release/stable.txt)/bin/linux/$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')/kubectl" \
+    && chmod +x /usr/local/bin/kubectl \
+    && kubectl version --client
+
 RUN useradd --create-home --shell /bin/bash runner
 
 WORKDIR /home/runner
