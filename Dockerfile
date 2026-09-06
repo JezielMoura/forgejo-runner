@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1 \
     PATH="/usr/share/dotnet:/usr/share/dotnet/tools:/home/runner/.dotnet/tools:/home/runner/.npm-global/bin:${PATH}"
 
-RUN apt-get update && apt-get install -y ca-certificates curl git buildah fuse-overlayfs libicu-dev jq gnupg
+RUN apt-get update && apt-get install -y ca-certificates curl git buildah fuse-overlayfs libicu-dev jq gnupg gettext-base
 
 RUN curl -sSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh \
     && chmod +x /tmp/dotnet-install.sh \
