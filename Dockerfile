@@ -21,6 +21,7 @@ RUN ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/') \
     && FORGEJO_URL="https://code.forgejo.org/forgejo/runner/releases/download/v${RUNNER_VERSION}/forgejo-runner-${RUNNER_VERSION}-linux-${ARCH}" \
     && curl -fsSL -o /usr/local/bin/forgejo-runner "${FORGEJO_URL}" \
     && chmod +x /usr/local/bin/forgejo-runner \
+    && chmod u+s /usr/bin/newuidmap /usr/bin/newgidmap \
     && forgejo-runner -v
 
 RUN useradd --create-home --shell /bin/bash runner
